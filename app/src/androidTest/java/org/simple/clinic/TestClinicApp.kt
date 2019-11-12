@@ -6,7 +6,6 @@ import org.simple.clinic.di.AppComponent
 import org.simple.clinic.di.DaggerTestAppComponent
 import org.simple.clinic.di.TestAppComponent
 import org.simple.clinic.di.TestAppModule
-import org.simple.clinic.di.TestCrashReporterModule
 import org.simple.clinic.di.TestDataSyncOnApprovalModule
 import org.simple.clinic.di.TestLoginModule
 import org.simple.clinic.di.TestPatientModule
@@ -39,7 +38,6 @@ class TestClinicApp : ClinicApp() {
         .appModule(TestAppModule(this))
         .storageModule(TestStorageModule())
         .patientModule(TestPatientModule())
-        .crashReporterModule(TestCrashReporterModule())
         .loginModule(TestLoginModule())
         .dataSyncOnApprovalModule(TestDataSyncOnApprovalModule())
         .build()
