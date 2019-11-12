@@ -13,7 +13,7 @@ import org.simple.clinic.storage.StorageModule
 class TestStorageModule : StorageModule(databaseName = "ignored", runDatabaseQueriesOnMainThread = true) {
   override fun sqliteOpenHelperFactory() = AppSqliteOpenHelperFactory(inMemory = true)
 
-  override fun appDatabase(appContext: Application, factory: SupportSQLiteOpenHelper.Factory, migrations: ArrayList<Migration>): AppDatabase {
+  override fun appDatabase(appContext: Application, factory: SupportSQLiteOpenHelper.Factory, migrations: List<Migration>): AppDatabase {
     return super.appDatabase(appContext, factory, migrations)
         .apply { openHelper.writableDatabase.setForeignKeyConstraintsEnabled(true) }
   }
