@@ -39,6 +39,7 @@ class RetrofitModule {
   @AppScope
   @Named("for_country")
   fun retrofit(commonRetrofitBuilder: Retrofit.Builder): Retrofit {
+    throw RuntimeException("TEST COUNTRY NOT AVAILABLE!")
     val baseUrl = BuildConfig.API_ENDPOINT
     val currentApiVersion = "v3"
 
